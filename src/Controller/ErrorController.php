@@ -23,6 +23,7 @@ use Cake\Event\Event;
  * Controller used by ExceptionRenderer to render error responses.
  */
 class ErrorController extends AppController {
+
 	/**
 	 * Initialization hook method.
 	 *
@@ -33,7 +34,7 @@ class ErrorController extends AppController {
 				'enableBeforeRedirect' => false 
 		] );
 	}
-	
+
 	/**
 	 * beforeFilter callback.
 	 *
@@ -43,7 +44,7 @@ class ErrorController extends AppController {
 	 */
 	public function beforeFilter(Event $event) {
 	}
-	
+
 	/**
 	 * beforeRender callback.
 	 *
@@ -56,7 +57,7 @@ class ErrorController extends AppController {
 		
 		$this->viewBuilder ()->setTemplatePath ( 'Error' );
 	}
-	
+
 	/**
 	 * afterFilter callback.
 	 *
