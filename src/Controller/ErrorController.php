@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -21,50 +22,48 @@ use Cake\Event\Event;
  *
  * Controller used by ExceptionRenderer to render error responses.
  */
-class ErrorController extends AppController
-{
-    /**
-     * Initialization hook method.
-     *
-     * @return void
-     */
-    public function initialize()
-    {
-        $this->loadComponent('RequestHandler', [
-            'enableBeforeRedirect' => false,
-        ]);
-    }
-
-    /**
-     * beforeFilter callback.
-     *
-     * @param \Cake\Event\Event $event Event.
-     * @return \Cake\Http\Response|null|void
-     */
-    public function beforeFilter(Event $event)
-    {
-    }
-
-    /**
-     * beforeRender callback.
-     *
-     * @param \Cake\Event\Event $event Event.
-     * @return \Cake\Http\Response|null|void
-     */
-    public function beforeRender(Event $event)
-    {
-        parent::beforeRender($event);
-
-        $this->viewBuilder()->setTemplatePath('Error');
-    }
-
-    /**
-     * afterFilter callback.
-     *
-     * @param \Cake\Event\Event $event Event.
-     * @return \Cake\Http\Response|null|void
-     */
-    public function afterFilter(Event $event)
-    {
-    }
+class ErrorController extends AppController {
+	/**
+	 * Initialization hook method.
+	 *
+	 * @return void
+	 */
+	public function initialize() {
+		$this->loadComponent ( 'RequestHandler', [ 
+				'enableBeforeRedirect' => false 
+		] );
+	}
+	
+	/**
+	 * beforeFilter callback.
+	 *
+	 * @param \Cake\Event\Event $event
+	 *        	Event.
+	 * @return \Cake\Http\Response|null|void
+	 */
+	public function beforeFilter(Event $event) {
+	}
+	
+	/**
+	 * beforeRender callback.
+	 *
+	 * @param \Cake\Event\Event $event
+	 *        	Event.
+	 * @return \Cake\Http\Response|null|void
+	 */
+	public function beforeRender(Event $event) {
+		parent::beforeRender ( $event );
+		
+		$this->viewBuilder ()->setTemplatePath ( 'Error' );
+	}
+	
+	/**
+	 * afterFilter callback.
+	 *
+	 * @param \Cake\Event\Event $event
+	 *        	Event.
+	 * @return \Cake\Http\Response|null|void
+	 */
+	public function afterFilter(Event $event) {
+	}
 }
